@@ -1,6 +1,9 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import App from '../App';
+import Tab from '../../components/tab/tab';
+
+jest.mock('flexlayout-react');
 
 describe('App Test Suite', () => {
   let testRenderer;
@@ -11,7 +14,7 @@ describe('App Test Suite', () => {
     testInstance = testRenderer.root;
   });
 
-  test('renders learn react link', () => {
-    expect(0 === 0).toBe(true);
+  test('Tab to be in document', () => {
+    expect(testInstance.findByType(Tab));
   });
 });
