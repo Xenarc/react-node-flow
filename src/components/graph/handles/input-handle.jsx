@@ -1,17 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Handle } from 'reactflow';
 
-function OutputHandle(props) {
+function InputHandle(props) {
+  const { style } = props;
+  style.backgroundColor = 'green';
+
   return (
     <Handle
-      type="source"
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...{ ...props, type: 'target' }}
-      style={{
-        backgroundColor: 'green',
+        // eslint-disable-next-line react/jsx-props-no-spreading
+      {...{
+        ...props,
+        type: 'target',
+        style: { ...style },
       }}
     />
   );
 }
 
-export default OutputHandle;
+InputHandle.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
+};
+
+InputHandle.defaultProps = {
+  style: {},
+};
+
+export default InputHandle;

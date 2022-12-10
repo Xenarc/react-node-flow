@@ -1,3 +1,16 @@
 .react-flow{
   background-color: #111;
 }
+
+.react-flow__handle{
+  width: 10px;
+  height: 10px;
+}
+
+.react-flow__handle-right{
+  right: -6px;
+}
+
+.react-flow__handle-left{
+  left: -6px;
+}

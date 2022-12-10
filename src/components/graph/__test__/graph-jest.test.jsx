@@ -3,7 +3,7 @@ import TestRenderer from 'react-test-renderer';
 import ReactFlow from 'reactflow';
 import Graph from '../graph';
 
-jest.mock('../nodes/State/state-node');
+jest.mock('../nodes/state/state-node');
 
 describe('Graph Test Suite', () => {
   let testRenderer;
@@ -32,6 +32,7 @@ describe('Graph Test Suite', () => {
   test('Custom nodeTypes should be provided', () => {
     expect(reactFlowInstance.props.nodeTypes).toStrictEqual(expect.objectContaining({
       stateNode: expect.any(Function),
+      switchNode: expect.any(Function),
     }));
   });
 });

@@ -18,6 +18,18 @@ module.exports = {
     'react',
   ],
   rules: {
+    'max-len': [
+      'error',
+      {
+        code: 90,
+        tabWidth: 2,
+        ignoreComments: true,
+        comments: 80,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+      },
+    ],
   },
   overrides: [
     {
@@ -28,7 +40,21 @@ module.exports = {
       env: {
         jest: true,
       },
-      plugins: ['jest'],
+      rules: {
+        'max-len': [
+          'error',
+          {
+            code: 90,
+            tabWidth: 2,
+            ignoreComments: true,
+            comments: 80,
+            ignoreUrls: true,
+            ignoreStrings: true,
+            ignoreTemplateLiterals: true,
+          },
+        ],
+      },
+      plugins: ['jest', 'react'],
     },
   ],
 };
